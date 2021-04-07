@@ -3,7 +3,9 @@
     <div class="row">
       <div class="row justify-content-end align-items-start">
         <div class="col-9 align-self-start">
-          <h1 >DevCrud</h1>
+          <a href="/" style="text-decoration: none; color: black;">
+            <h1 >DevCrud</h1>
+          </a>
         </div>
         <div class="col-2 align-self-center">
           <button 
@@ -22,13 +24,13 @@
       <div class="row">
         <div class="col-8">
           <div for="name" class="form-label">Nome</div>
-          <input type="email" v-model="dev.name" class="form-control" id="name" aria-describedby="emailHelp">
+          <input placeholder="ex: João Doidinho..." type="email" v-model="dev.name" class="form-control" id="name" aria-describedby="emailHelp">
           <div id="emailHelp" class="form-text">Não erre o seu próprio nome rsrs.</div>
         </div>
         <div class="col-4">
           <div class="mb-3">
             <div for="timeExp" class="form-label">Tempo de experiencia</div>
-            <input type="text" v-model="dev.timeExp" class="form-control" id="timeExp">
+            <input placeholder="ex: 4 anos..." type="text" v-model="dev.timeExp" class="form-control" id="timeExp">
           </div>
         </div>
       </div>
@@ -36,13 +38,13 @@
         <div class="col-2">
           <div class="mb-3">
             <div for="age" class="form-label">Idade</div>
-            <input type="number" v-model="dev.age" class="form-control" id="age">
+            <input placeholder="ex: 25" type="number" v-model="dev.age" class="form-control" id="age">
           </div>
         </div>
         <div class="col-7">    
           <div class="mb-3">
             <div for="gitname" class="form-label">Nome no GitHub:</div>
-            <input type="text" v-model="dev.github_name" class="form-control" id="gitname">
+            <input placeholder="ex: Ladgelson" type="text" v-model="dev.github_name" class="form-control" id="gitname">
           </div>
         </div>
         <div class="col-1 ">
@@ -55,7 +57,7 @@
       </div>
       <div class="mb-3">
         <div for="linkedin" class="form-label">Linkedin</div>
-        <input type="text" v-model="dev.linkedin" class="form-control" id="linkedin">
+        <input placeholder="ex: https://www.linkedin.com/" type="text" v-model="dev.linkedin" class="form-control" id="linkedin">
       </div>
     </div>
 
@@ -140,7 +142,7 @@ export default {
           this.dev = {
             ...this.dev,
             avatar: data.avatar_url,
-            bio: data.bio,
+            bio: data.bio == null ? 'Sem Bio.': data.bio,
           }
         }).catch(error => {
           console.error(error)
