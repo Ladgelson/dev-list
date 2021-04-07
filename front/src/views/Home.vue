@@ -19,10 +19,10 @@
     <div v-if="this.devList.length === 0" class="alert alert-secondary" role="alert">
       Nenhum dado foi encontrado, clique em criar para cadastrar um novo dev!
     </div>
-    <div class="row"> 
-      <div class="col container-fluid" v-for="dev in devList" :key="dev.id">  
+    <div class="row justify-content-center"> 
+      <div class="col" v-for="dev in devList" :key="dev.id">  
         <div class="card" style="width: 18rem;">
-          <div class="row justify-content-md-center">
+          <div class="row justify-content-center">
             <img v-if="dev.avatar == ''" class="cardImage" src="../assets/user-solid.svg" alt="...">
             <img v-else :src="dev.avatar" class="cardImage" alt="...">
           </div>
@@ -32,7 +32,6 @@
               <p class="card-text col">{{dev.age}} Anos</p>
               <p class="card-text col">Exp: {{dev.timeExp}}</p>
             </div>
-
             <ul class="social-icons">
               <li>
                   <a :href="`https://github.com/${dev.github_name}`">

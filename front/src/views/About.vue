@@ -2,12 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="row justify-content-end align-items-start">
-        <div class="col-9 align-self-start">
+        <div class="col-10 align-self-start">
           <a href="/" style="text-decoration: none; color: black;">
             <h1 >DevCrud</h1>
           </a>
         </div>
-        <div class="col-2 align-self-center">
+        <div class="col-1 align-self-center">
           <button 
             @click="handleActionButton()" 
             class="btn btn-success">{{ buttonLabel }}
